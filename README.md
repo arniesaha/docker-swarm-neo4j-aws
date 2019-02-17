@@ -63,3 +63,6 @@ Run: `docker swarm join --token SWMTKN-1-2z7z4mdvw4o4evm7t7ulos6fec0wee1d2hec9z8
 
 ##Dumping Neo4j DB from local docker container to dump file:
 `docker run --name=neo4j-dump --mount type=bind,source=$HOME/data,target=/data -it -d neo4j:3.3.5-enterprise neo4j bin/neo4j-admin dump --database=graph.db --to=/graph.db.dump`
+
+`docker run --name neo4j-dump --mount type=bind,source=$HOME/neo4j-data,target=/data neo4j:3.3.5 bin/neo4j-admin dump --database=graph.db --to=/var/lib/neo4j/graph.db.dump`
+
